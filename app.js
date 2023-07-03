@@ -9,7 +9,14 @@ let border = document.querySelector(".border");
 
 
 btn.addEventListener('click',()=>{
-    let finalInput = myInput.value;
+    let finalInput = myInput.value.replace(/ /g, '');
+    console.log(finalInput)
+    // if(finalInput.includes(' ')){
+    //     const inputWithoutSpace = finalInput.replace(/ /g, '')
+    //     console.log(inputWithoutSpace)
+    //     return finalInput;
+    //     // alert("yes its work") 
+    // }
    
     let apiUrl = `https://restcountries.com/v3.1/name/${finalInput}?fullText=true`
     fetch(apiUrl).then((responce)=> responce.json())
